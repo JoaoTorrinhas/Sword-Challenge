@@ -8,3 +8,6 @@ asyncpg
 pytest
 pytest-cov
 python-dotenv
+#passlib[bcrypt==4.0.1]
+bcrypt
+python-multipart

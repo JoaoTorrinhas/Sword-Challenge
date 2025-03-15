@@ -275,7 +275,7 @@ async def evaluate_pacient(
     
 
 @app.get("/recommendation/{id}", response_model=RecommendationResponse)
-async def get_recommendation(
+async def get_recommendation_by_id(
     id: str, 
     #db: Session = Depends(get_db)
     db: AsyncSession = Depends(get_db),

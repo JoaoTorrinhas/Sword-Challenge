@@ -158,7 +158,7 @@ def generate_recommendation(patient_data: PatientData) -> List[str]:
 
 @app.post("/token", response_model=Token)
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
-    logger.info(f"User: {form_data.username} is trying to login with password {form_data.password}") # debug
+    #logger.info(f"User: {form_data.username} is trying to login with password {form_data.password}") # debug
     
     if form_data.username != fake_users_db["username"] or not verify_password(form_data.password, fake_users_db["password"]):
         raise HTTPException(
@@ -216,7 +216,7 @@ async def evaluate_pacient(
             
             # The patient data has changed, delete the old cache data
             cache_key = get_recommendations_cache_key(patient.id, patient.first_name, patient.last_name)
-            await redis_client.delete(cache_key)
+            await redis_client.delete(cache_key) # If for some reason the cache_key doen't exist, this will not raise an error
         
         # Generate cache key
         cache_key = get_recommendations_cache_key(patient.id, patient.first_name, patient.last_name)
@@ -254,6 +254,15 @@ async def evaluate_pacient(
                 recommendation=rec
             )
             db.add(recommendation)
+            await db.flush()
+            
+            data = {
+                "patient_id": patient.id,
+                "recommendation_id": recommendation.id,
+                "recommendation": rec,
+                "timestamp": recommendation.timestamp.isoformat()
+            }
+            await redis_client.publish("recommendation_channel", json.dumps(data))
             
         await db.commit()
         await redis_client.set(cache_key, json.dumps(recommendations_text), ex=86400) # 86400 sec = 24 hours expiration

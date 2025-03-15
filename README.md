@@ -28,7 +28,7 @@ This process reflects real-world scenarios where a patient typically **does not 
 Appointments take place on separate days and usually with considerable intervals between them.    
 
 
-## 🏨 Clinical Recommendation Process - The system returns **more than one recommendation** for a patient if necessary, considering their medical conditions.
+##  Clinical Recommendation Process - The system returns **more than one recommendation** for a patient if necessary, considering their medical conditions.
 - The structure of **if statements** is designed so that the **order of recommendations in the list reflects priority**.
 - The recommendation **"Post-Op Rehabilitation Plan"** has **higher priority**, while **"Weight Management Program"** has **lower priority**.
 - Although this approach is **not essential to the current problem**, it may be **useful in the future** when refining clinical recommendations.

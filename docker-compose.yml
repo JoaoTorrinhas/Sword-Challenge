@@ -36,6 +36,16 @@ services:
     volumes:
       - .:/app
 
+  worker:
+    build:
+      context: ./worker  
+      dockerfile: Dockerfile 
+    container_name: worker_app
+    depends_on:
+      - redis
+    volumes:
+      - ./worker/logs:/app/logs
+
 volumes:
   health_care_data:
   redis_data:

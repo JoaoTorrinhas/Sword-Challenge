@@ -1,0 +1,10 @@
+2025-03-15 17:50:39,344 - INFO - Worker started and listening for recommendation events...
+2025-03-15 18:04:04,149 - INFO - Received message: {'type': 'message', 'pattern': None, 'channel': 'recommendation_channel', 'data': '{"patient_id": 1, "recommendation_id": "a559c06e-e69c-4fda-a05a-c908914a7c45", "recommendation": "Post-Op Rehabilitation Plan", "timestamp": "2025-03-15T18:04:04.042915"}'}
+2025-03-15 18:04:04,152 - INFO - Processing recommendation: Post-Op Rehabilitation Plan for patient 1
+2025-03-15 18:04:04,153 - INFO - Email sent to patient 1 with recommendation: Post-Op Rehabilitation Plan
+2025-03-15 18:06:14,745 - INFO - Received message: {'type': 'message', 'pattern': None, 'channel': 'recommendation_channel', 'data': '{"patient_id": 2, "recommendation_id": "7c28ca8c-7ac8-4f22-b8dc-730922a5dea9", "recommendation": "Physical Therapy", "timestamp": "2025-03-15T18:06:13.887969"}'}
+2025-03-15 18:06:14,747 - INFO - Processing recommendation: Physical Therapy for patient 2
+2025-03-15 18:06:14,748 - INFO - Email sent to patient 2 with recommendation: Physical Therapy
+2025-03-15 18:06:15,756 - INFO - Received message: {'type': 'message', 'pattern': None, 'channel': 'recommendation_channel', 'data': '{"patient_id": 2, "recommendation_id": "3a900846-9a96-4bae-afdc-c6e73dcf1195", "recommendation": "Weight Management Program", "timestamp": "2025-03-15T18:06:13.889672"}'}
+2025-03-15 18:06:15,757 - INFO - Processing recommendation: Weight Management Program for patient 2
+2025-03-15 18:06:15,758 - INFO - Email sent to patient 2 with recommendation: Weight Management Program

@@ -24,7 +24,7 @@
    - If there are **no recorded** patient recommendations for the day, **new recommendations are stored** in the database.
 
 ##  Motivation for this Logic  
-This process reflects real-world scenarios where a patient typically **does not have more than one appointment on the same day with the same doctor**.  
+This process reflects real-world scenarios where a patient typically **does not have more than one appointment on the same day with the same or different doctors**.
 Appointments take place on separate days and usually with considerable intervals between them.    
 
 

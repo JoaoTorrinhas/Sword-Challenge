@@ -10,6 +10,7 @@ pytest-cov
 python-dotenv
 pytest-asyncio
 pytest-mock
+aiosqlite
 greenlet
 #passlib[bcrypt==4.0.1]
 bcrypt

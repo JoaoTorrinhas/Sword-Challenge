@@ -11,3 +11,4 @@ python-dotenv
 #passlib[bcrypt==4.0.1]
 bcrypt
 python-multipart
+httpx

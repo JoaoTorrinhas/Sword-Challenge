@@ -9,6 +9,7 @@ pytest
 pytest-cov
 python-dotenv
 pytest-asyncio
+greenlet
 #passlib[bcrypt==4.0.1]
 bcrypt
 python-multipart

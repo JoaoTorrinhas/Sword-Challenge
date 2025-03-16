@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import BaseModel
 from models import Patient, Recommendation
 from connection_db import get_db, create_all_tables
-from typing import List
+from typing import List, Optional
 from datetime import date, datetime, timedelta
 import redis.asyncio as redis 
 import json
@@ -62,7 +62,8 @@ class Token(BaseModel):
     token_type: str
 
 class TokenData(BaseModel):
-    username: str | None = None
+    #username: str | None = None
+    username: Optional[str] = None
 
 
 # Redis Connection
@@ -95,7 +96,7 @@ def verify_password(plain_password, hashed_password):
     return bcrypt.checkpw(password=password_byte_enc, hashed_password=hashed_password)
 
 
-def create_access_token(data: dict, expires_delta: timedelta | None = None):
+def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()
     if expires_delta:
         expire = datetime.utcnow() + expires_delta

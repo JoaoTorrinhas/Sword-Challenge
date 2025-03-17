@@ -24,8 +24,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Set environment variables for testing
-        env:
-          DATABASE_URL: sqlite+aiosqlite:///:memory:
+        run: |
+          echo "DATABASE_URL: sqlite+aiosqlite:///:memory:" >> $GITHUB_ENV
 
       - name: Run tests with pytest
         run: |

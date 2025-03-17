@@ -8,3 +8,4 @@
 2025-03-15 18:06:15,756 - INFO - Received message: {'type': 'message', 'pattern': None, 'channel': 'recommendation_channel', 'data': '{"patient_id": 2, "recommendation_id": "3a900846-9a96-4bae-afdc-c6e73dcf1195", "recommendation": "Weight Management Program", "timestamp": "2025-03-15T18:06:13.889672"}'}
 2025-03-15 18:06:15,757 - INFO - Processing recommendation: Weight Management Program for patient 2
 2025-03-15 18:06:15,758 - INFO - Email sent to patient 2 with recommendation: Weight Management Program
+2025-03-17 14:27:09,104 - INFO - Worker started and listening for recommendation events...

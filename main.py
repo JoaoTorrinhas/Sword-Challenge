@@ -226,7 +226,7 @@ async def evaluate_pacient(
         if cached_recommentations:
             logger.info("Returning cached recommendations")
             return {
-                "message": "Patient already have recommendations for today (retreived from cache)",
+                "message": "Patient recommendations retreived from cache",
                 "recommendations": json.loads(cached_recommentations)
             }
         

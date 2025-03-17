@@ -212,6 +212,7 @@ async def test_get_recommendation_by_id_not_found(mock_redis, async_client, over
 async def test_login_for_access_token_success(async_client):
     with patch("main.verify_password", return_value=True):
         response = await async_client.post("/token", data={"username": "admin", "password": "admin123"})
+        print("RESPONSE test_login_for_access_token_success: ", response.json())
         assert response.status_code == 200
         json_response = response.json()
         assert "access_token" in json_response
@@ -221,5 +222,6 @@ async def test_login_for_access_token_success(async_client):
 async def test_login_for_access_token_fail(async_client):
     with patch("main.verify_password", return_value=False):
         response = await async_client.post("/token", data={"username": "admin", "password": "wrong_password"})
+        print("RESPONSE test_login_for_access_token_fail: ", response.json())
         assert response.status_code == 401
         assert response.json() == {"detail": "Incorrect username or password"}

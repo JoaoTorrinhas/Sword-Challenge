@@ -23,6 +23,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Set environment variables for testing
+        env:
+          DATABASE_URL: sqlite+aiosqlite:///:memory:
+
       - name: Run tests with pytest
         run: |
           pytest -v --disable-warnings

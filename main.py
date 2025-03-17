@@ -232,21 +232,21 @@ async def evaluate_pacient(
         
         recommendations_text = generate_recommendation(patient_data)
         
-        today = date.today()
-        existing_recommendations = await db.execute(select(Recommendation).filter(
-            Recommendation.patient_id == patient.id,
-            Recommendation.timestamp >= datetime(today.year, today.month, today.day),
-            Recommendation.timestamp < datetime(today.year, today.month, today.day + 1)
-        ))
+        # today = date.today()
+        # existing_recommendations = await db.execute(select(Recommendation).filter(
+        #     Recommendation.patient_id == patient.id,
+        #     Recommendation.timestamp >= datetime(today.year, today.month, today.day),
+        #     Recommendation.timestamp < datetime(today.year, today.month, today.day + 1)
+        # ))
         
-        existing_recommendations = existing_recommendations.scalars().all()
+        # existing_recommendations = existing_recommendations.scalars().all()
         
-        if existing_recommendations:
-            # Return patient recommendations if they already exist for that day
-            return {
-                "message" : "Patient already have recommendations for today",
-                "recommendations": [rec.recommendation for rec in existing_recommendations]
-            }
+        # if existing_recommendations:
+        #     # Return patient recommendations if they already exist for that day
+        #     return {
+        #         "message" : "Patient already have recommendations for today",
+        #         "recommendations": [rec.recommendation for rec in existing_recommendations]
+        #     }
         
         # Add recommendation to database if it doesn't exist
         for rec in recommendations_text:

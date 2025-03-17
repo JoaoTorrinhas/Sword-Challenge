@@ -210,7 +210,7 @@ async def test_get_recommendation_by_id_not_found(mock_redis, async_client, over
 
 @pytest.mark.anyio
 async def test_login_for_access_token_success(async_client):
-    with patch("main.verify_password", return_value=True):
+    with patch("main.verify_password", return_value=True), patch("main.SECRET_KEY", "mysecretkey_mocked"):
         response = await async_client.post("/token", data={"username": "admin", "password": "admin123"})
         print("RESPONSE test_login_for_access_token_success: ", response.json())
         assert response.status_code == 200

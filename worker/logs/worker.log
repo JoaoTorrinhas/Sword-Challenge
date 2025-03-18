@@ -28,3 +28,10 @@
 2025-03-17 15:23:47,271 - INFO - Received message: {'type': 'message', 'pattern': None, 'channel': 'recommendation_channel', 'data': '{"patient_id": 2, "recommendation_id": "9064e65c-f63d-44d6-94fd-37c391102e24", "recommendation": "Physical Therapy", "timestamp": "2025-03-17T15:23:47.209544"}'}
 2025-03-17 15:23:47,272 - INFO - Processing recommendation: Physical Therapy for patient 2
 2025-03-17 15:23:47,272 - INFO - Email sent to patient 2 with recommendation: Physical Therapy
+2025-03-18 15:42:33,823 - INFO - Worker started and listening for recommendation events...
+2025-03-18 15:48:23,115 - INFO - Received message: {'type': 'message', 'pattern': None, 'channel': 'recommendation_channel', 'data': '{"patient_id": 3, "recommendation_id": "1b936594-3fa9-49aa-8f74-a8eb466a296e", "recommendation": "Post-Op Rehabilitation Plan", "timestamp": "2025-03-18T15:48:22.437828"}'}
+2025-03-18 15:48:23,118 - INFO - Processing recommendation: Post-Op Rehabilitation Plan for patient 3
+2025-03-18 15:48:23,118 - INFO - Email sent to patient 3 with recommendation: Post-Op Rehabilitation Plan
+2025-03-18 15:51:05,717 - INFO - Received message: {'type': 'message', 'pattern': None, 'channel': 'recommendation_channel', 'data': '{"patient_id": 3, "recommendation_id": "837ad7ee-a316-4b37-b020-50c990c88c25", "recommendation": "General Health Checkup", "timestamp": "2025-03-18T15:51:04.819355"}'}
+2025-03-18 15:51:05,719 - INFO - Processing recommendation: General Health Checkup for patient 3
+2025-03-18 15:51:05,720 - INFO - Email sent to patient 3 with recommendation: General Health Checkup
